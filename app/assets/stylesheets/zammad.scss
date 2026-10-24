@@ -11,31 +11,38 @@ $mobileNavigationWidth: 50px;
 $mobileNavigationWidthOpen: 220px;
 
 :root {
-  --button-action-color: hsl(0, 0%, 60%);
+  // Contrast values below are WCAG 2 ratios on the light page (hsl(210, 17%, 98%)) unless noted. 2.85:1 -> 5.49:1
+  --button-action-color: hsl(0, 0%, 40%);
   --button-background: white;
   --button-background-active: hsl(0, 0, 98%);
   --button-active: hsl(204, 7%, 28%);
   --button-active-active: hsla(0, 0%, 0%, 0.55);
   --button-primary-text: var(--text-inverted);
-  --button-primary-background: hsl(203, 65%, 55%);
-  --button-primary-background-active: hsl(203, 65%, 45%);
+  // white text 2.96:1 -> 5.31:1; pressed 7.21:1
+  --button-primary-background: hsl(203, 70%, 38%);
+  --button-primary-background-active: hsl(203, 70%, 31%);
   --header-primary: hsl(202, 8%, 28%);
-  --header-secondary: hsl(198, 10%, 69%);
+  // 2.14:1 -> 4.92:1 on the table-head tint
+  --header-secondary: hsl(198, 9%, 40%);
   --text-normal: hsl(60, 1%, 34%);
-  --text-muted: hsl(213, 3%, 64%);
+  // 2.53:1 on white -> 5.38:1 on the page, 4.94:1 on the table-head tint
+  --text-muted: hsl(213, 5%, 41%);
   --text-muted-highlight: hsl(205, 90%, 90%);
   --text-muted-alt: hsl(197, 16%, 65%);
-  --text-link: hsl(204, 72%, 50%);
+  // 3.38:1 on white -> 5.53:1
+  --text-link: hsl(204, 80%, 36%);
   --text-inverted: white;
   --text-active: white;
-  --text-nav: hsl(204, 72%, 50%);
+  --text-nav: hsl(204, 80%, 36%);
   --text-button-primary: var(--button-primary-background);
   --text-button-primary-active: var(--button-primary-background-active);
   --text-button-secondary: var(--interactive-muted);
   --nav-icon: hsl(0, 0%, 50%);
-  --highlight: hsl(205, 90%, 60%);
+  // white text on badges and selected items 2.59:1 -> 5.07:1
+  --highlight: hsl(205, 75%, 40%);
   --interactive-primary: black;
-  --interactive-muted: hsl(210, 3%, 71%);
+  // secondary text buttons, tabs, 'Forgot password?': 2.06:1 -> 5.54:1
+  --interactive-muted: hsl(210, 4%, 40%);
   --interactive-muted-active: hsl(210, 4%, 71%);
   --interactive-muted-alt: hsl(197, 19%, 78%);
   --interactive-muted-alt-selected: hsl(206, 7%, 37%);
@@ -127,9 +134,11 @@ $mobileNavigationWidthOpen: 220px;
   --header-primary: white;
   --header-secondary: hsl(198, 5%, 73%);
   --text-normal: hsl(205, 1%, 86%);
-  --text-muted: hsl(213, 3%, 60%);
+  // 4.02:1 -> 5.29:1 on the dark card
+  --text-muted: hsl(213, 4%, 69%);
   --text-muted-alt: hsl(213, 8%, 61%);
-  --text-link: hsl(202, 72%, 50%);
+  // 3.61:1 -> 5.42:1 on the dark card
+  --text-link: hsl(202, 80%, 66%);
   --text-nav: hsl(205, 1%, 84%);
   --nav-icon: hsl(0, 0%, 50%);
   --highlight: hsl(205, 90%, 60%);
@@ -146,7 +155,8 @@ $mobileNavigationWidthOpen: 220px;
   --background-quaternary: hsl(230, 7%, 13%);
   --background-quaternary-alt: hsl(230, 4%, 30%);
   --background-popover: hsl(216, 3%, 30%);
-  --background-active: var(--highlight);
+  // white text on the selected item 2.59:1 -> 5.07:1
+  --background-active: hsl(205, 75%, 40%);
   --background-highlight: hsl(205, 30%, 27%);
   --background-article-meta: hsl(230, 7%, 25%);
   --background-article-customer: hsl(218, 8%, 32%);
