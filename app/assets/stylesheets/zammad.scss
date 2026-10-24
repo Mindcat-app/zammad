@@ -691,7 +691,9 @@ pre code {
 .form-control::placeholder,
 .token-input::placeholder,
 .u-placeholder {
-  color: var(--ghost-color);
+  // --ghost-color is 1.9:1 on white; placeholders need 4.5:1.
+  color: var(--text-muted);
+  opacity: 1;
 }
 
 .btn {
@@ -16489,5 +16491,17 @@ div.accounted-time-value {
   &-empty {
     color: var(--text-muted);
     padding: 10px;
+  }
+}
+
+// Respect the OS "reduce motion" setting everywhere, not only in the two places guarded above (WCAG 2.3.3).
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
