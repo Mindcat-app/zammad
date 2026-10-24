@@ -38,6 +38,7 @@ $mobileNavigationWidthOpen: 220px;
   --interactive-muted: hsl(210, 3%, 71%);
   --interactive-muted-active: hsl(210, 4%, 71%);
   --interactive-muted-alt: hsl(197, 19%, 78%);
+  --focus-ring: var(--button-primary-background);
   --interactive-muted-alt-selected: hsl(206, 7%, 37%);
   --background-primary: hsl(210, 17%, 98%);
   --background-primary-alt: hsl(197, 16%, 94%);
@@ -148,6 +149,7 @@ $mobileNavigationWidthOpen: 220px;
   --background-popover: hsl(216, 3%, 30%);
   --background-active: var(--highlight);
   --background-highlight: hsl(205, 30%, 27%);
+  --focus-ring: var(--text-link);
   --background-article-meta: hsl(230, 7%, 25%);
   --background-article-customer: hsl(218, 8%, 32%);
   --background-article-customer-meta: hsl(218, 6%, 30%);
@@ -692,6 +694,32 @@ pre code {
 .token-input::placeholder,
 .u-placeholder {
   color: var(--ghost-color);
+}
+
+// Keyboard focus is always visible (WCAG 2.4.7). `a` and `.btn` set `outline: none !important`, so the
+// keyboard-only rule needs !important too; mouse clicks stay unchanged.
+a:focus-visible,
+.btn:focus-visible {
+  outline: 2px solid var(--focus-ring) !important;
+  outline-offset: 2px;
+}
+
+button:focus-visible,
+[role='button']:focus-visible,
+[tabindex]:not([tabindex='-1']):focus-visible,
+summary:focus-visible,
+input[type='checkbox']:focus-visible,
+input[type='radio']:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+// On the dark navigation rail, inset so it is not clipped.
+.navigation a:focus-visible,
+.navigation .btn:focus-visible,
+.navigation [tabindex]:focus-visible {
+  outline-color: var(--menu-text-active) !important;
+  outline-offset: -2px;
 }
 
 .btn {
